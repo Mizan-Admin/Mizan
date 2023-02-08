@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_product_template_form_inherit" model="ir.ui.view">
+        <field name="name">product.template.inherit.form.view</field>
+        <field name="model">product.template</field>
+        <field name="inherit_id" ref="product.product_template_form_view"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='detailed_type']" position="after">
+                <field name="so_pos_uom_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_sale_order_product_form_inherit" model="ir.ui.view">
+        <field name="name">sale.order.product.inherit.form.view</field>
+        <field name="model">sale.order</field>
+        <field name="inherit_id" ref="sale.view_order_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='order_line']//tree//field[@name='product_uom_qty']" position="after">
+                <field name="so_pos_uom_id"/>
+            </xpath>
+            <xpath expr="//field[@name='order_line']//form//field[@name='product_uom_qty']" position="after">
+                <field name="so_pos_uom_id"/>
+            </xpath>
+        </field>
+    </record>
+    <record id="view_pos_order_product_form_inherit" model="ir.ui.view">
+        <field name="name">pos.order.product.inherit.form.view</field>
+        <field name="model">pos.order</field>
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//tree//field[@name='qty']" position="after">
+                <field name="so_pos_uom_id"/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
