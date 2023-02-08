@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <data>
+        <record id="group_sales_product_bom" model="res.groups">
+            <field name="name">Product: Show BOM</field>
+            <field name="comment">Set access rights to show BOM.</field>
+        </record>
+    </data>
+</odoo>
