@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<odoo>
+    <record id="view_account_move_product_form_inherit" model="ir.ui.view">
+        <field name="name">account.move.product.inherit.form.view</field>
+        <field name="model">account.move</field>
+        <field name="inherit_id" ref="account.view_move_form"/>
+        <field name="arch" type="xml">
+            <xpath expr="//field[@name='ref']" position="before">
+                <field name="employee_partner_id" readonly="1" widget="res_partner_many2one" options='{"always_reload": True, "no_quick_create": True}'/>
+            </xpath>
+        </field>
+    </record>
+</odoo>
